@@ -1,5 +1,6 @@
 import React from 'react';
-import { Carousel } from 'flowbite-react';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/themes/splide-default.min.css'; // Ensure to import the CSS for Splide
 import PromotionCard from './PromotionCard';
 
 interface Promotion {
@@ -17,17 +18,27 @@ const PromotionSlide: React.FC<PromotionSlideProps> = ({ promotions }) => {
         <div className="flex flex-col lg:flex-row lg:space-x-4 bg-black rounded-md shadow-md">
             <div className="w-full lg:w-2/3 flex justify-center items-center">
                 <div className="w-full">
-                    <Carousel slideInterval={3000} className="rounded-md">
+                    <Splide
+                        options={{
+                            type: 'fade', // Example of using fade effect
+                            autoplay: true,
+                            interval: 3000,
+                            lazyLoad: 'nearby', // Lazy load images nearby
+                        }}
+                        className="splide rounded-md"
+                    >
                         {promotions.map(promotion => (
-                            <a href={promotion.link} key={promotion.id}>
-                                <img
-                                    src={promotion.image}
-                                    alt={`Promotion ${promotion.id}`}
-                                    className="w-full h-auto lg:h-80 object-cover"
-                                />
-                            </a>
+                            <SplideSlide key={promotion.id}>
+                                <a href={promotion.link}>
+                                    <img
+                                        src={promotion.image}
+                                        alt={`Promotion ${promotion.id}`}
+                                        className="w-full h-auto lg:h-80 object-cover"
+                                    />
+                                </a>
+                            </SplideSlide>
                         ))}
-                    </Carousel>
+                    </Splide>
                 </div>
             </div>
             <div className="w-full lg:w-1/3 flex flex-col p-4 lg:p-6 space-y-4">
