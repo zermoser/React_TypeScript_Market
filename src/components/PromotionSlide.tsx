@@ -15,15 +15,17 @@ interface PromotionSlideProps {
 
 const PromotionSlide: React.FC<PromotionSlideProps> = ({ promotions }) => {
     return (
-        <div className="flex flex-col lg:flex-row lg:space-x-4 bg-black rounded-md shadow-md">
+        <div className="flex flex-col lg:flex-row lg:space-x-4 bg-white rounded-md shadow-md">
             <div className="w-full lg:w-2/3 flex justify-center items-center">
-                <div className="w-full">
+                <div className="flex justify-center items-center h-[400px] bg-slate-400">
                     <Splide
                         options={{
-                            type: 'fade', // Example of using fade effect
+                            type: 'fade',
                             autoplay: true,
                             interval: 3000,
-                            lazyLoad: 'nearby', // Lazy load images nearby
+                            rewind: true, // Option to rewind the slides (loop)
+                            pauseOnHover: false, // Option to prevent pausing on hover
+                            lazyLoad: 'nearby',
                         }}
                         className="splide rounded-md"
                     >
