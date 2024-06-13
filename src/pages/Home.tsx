@@ -11,8 +11,6 @@ interface Product {
 
 interface Promotion {
     id: number;
-    title: string;
-    description: string;
     image: string;
     link: string;
 }
@@ -25,8 +23,8 @@ const products: Product[] = [
 ];
 
 const promotions: Promotion[] = [
-    { id: 1, title: 'Promotion 1', description: 'This is the first promotion', image: 'https://ngthai.com/app/uploads/2023/05/%E0%B9%81%E0%B8%A1%E0%B8%A7.jpg', link: '#' },
-    { id: 2, title: 'Promotion 2', description: 'This is the second promotion', image: 'https://ngthai.com/app/uploads/2023/05/%E0%B9%81%E0%B8%A1%E0%B8%A7.jpg', link: '#' },
+    { id: 1, image: 'https://ngthai.com/app/uploads/2023/05/%E0%B9%81%E0%B8%A1%E0%B8%A7.jpg', link: '#' },
+    { id: 2, image: 'https://ngthai.com/app/uploads/2023/05/%E0%B9%81%E0%B8%A1%E0%B8%A7.jpg', link: '#' },
 ];
 
 const Home: React.FC = () => {
