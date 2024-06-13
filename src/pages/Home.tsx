@@ -1,6 +1,8 @@
 import React from 'react';
 import ProductCard from '../components/ProductCard';
 import PromotionSlide from '../components/PromotionSlide';
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 interface Product {
     id: number;
@@ -29,19 +31,21 @@ const promotions: Promotion[] = [
 
 const Home: React.FC = () => {
     return (
-        <div className="home">
+        <div className="flex flex-col min-h-screen bg-gray-100">
+        <Header />
             <div className="bg-orange-500 text-white text-center p-10 text-3xl">
                 Welcome to Shopee Clone
             </div>
             <div className="p-6 bg-gray-100">
                 <PromotionSlide promotions={promotions} />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 bg-gray-100">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 ">
                 {products.map(product => (
                     <ProductCard key={product.id} product={product} />
                 ))}
             </div>
-        </div>
+        <Footer />
+    </div>
     );
 };
 

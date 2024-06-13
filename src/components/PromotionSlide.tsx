@@ -17,7 +17,7 @@ const PromotionSlide: React.FC<PromotionSlideProps> = ({ promotions }) => {
     return (
         <div className="flex flex-col lg:flex-row lg:space-x-4 bg-white rounded-md shadow-md">
             <div className="w-full lg:w-2/3 flex justify-center items-center">
-                <div className="flex justify-center items-center h-[400px] bg-slate-400">
+                <div className="flex justify-center items-center h-[400px] bg-slate-700">
                     <Splide
                         options={{
                             type: 'fade',
